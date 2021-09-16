@@ -3,15 +3,19 @@ import bouton from '../src/img/BOUTON-FORMATION.png';
 import React, { useState } from 'react';
 
 function App() {
-<<<<<<< HEAD
 
     const title = "Juiette Tétard";
 
-    const showDiv = useState(false);
+    // const showDiv = useState(false);
+    const [showParcours, setShowParcours] = useState(false)
 
-    const handleClick = () =>{
-        const showDiv = true;
+    const handleClick = (state, setState) =>{
+        console.log("bonjour")
+        setState(!state)
     }
+
+    console.log("showparcours", showParcours)
+    const email = "juliettetetard@hotmail.fr"
 
     return (
         <div className="App">
@@ -25,22 +29,26 @@ function App() {
                 </div>
                 <div className="line3 font2">
                     <p>Contact <br/>
-                        <a className="link" href="mailto:juliettetetard@gmail.com" title="mail">juliettetetard@gmail.com</a>
+                        <a className="link" href={`mailto:${email}`} title="mail">{email}</a>
                     </p>
 
                 </div>
                 <div className="line4">
-                    <a className="link2" href="#" onClick={() => handleClick(!!showDiv)} title="parcours">Parcours</a><br/>
+                    {/* <a className="link2" href="#" onClick={() => handleClick(showParcours, setShowParcours)} title="parcours">Parcours</a><br/> */}
+                    <button className="buttonPrimary" onClick={() => handleClick(showParcours, setShowParcours)} >Parcours 2</button>
                     <img className="formation" src={bouton} alt="bouton"/>
-
                 </div>
             </div>
+
+
             <div className="fond2">
                 <div className="col2">
                     {/*<p>Designer <br/><p className="text-right">Graphique</p> <br/> & Numérique</p>*/}
                     <p>Designer <p className="text-right">Graphique & Numérique</p></p>
 
-                    {showDiv &&  <div className="studies font2">
+                    {showParcours &&  
+                    <div className="studies font2">
+                        {/* ICI */}
                         <h1>Études <br/>& formations</h1>
                         <p>2021<br/>
                             Titre professionnel <b>Concepteur <br/>Développeur d’Application</b><br/>
@@ -67,47 +75,14 @@ function App() {
                             mention assez bien<br/>
                             Lycée Eugénie-Cotton<br/>
                             à Montreuil (93)</p>
-
-
-                    </div>}
+                    </div>
+                    }
 
                 </div>
             </div>
 
         </div>
     );
-=======
-  const state = {
-    clients : [
-        {id: 1, nom : "Machin1"},
-        {id: 2, nom : "Machin2"},
-        {id: 3, nom : "Machin3"}
-    ]
-  }
-  
-  const title = "bonjour"
-
-  const handleClick = () =>{
-    alert("salut la famille !")
-  }
-
-  return (
-    <div className="App">
-      <div>
-                <h1>{title}</h1>
-                <button onClick={handleClick}>Click me</button>
-                <ul>
-                    {state.clients.map(client =>(
-                        <li>{client.nom} <button>X</button></li>
-                      ))}
-                </ul>
-                <form>
-                    <input type="text" placeholder="Ajouter un client"/><button>Confirmer</button>
-                </form>
-            </div>
-    </div>
-  );
->>>>>>> b725c7a53cd59d62b6dc2ddc129a0a9a0a9368eb
 }
 
 export default App;
