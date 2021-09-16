@@ -3,6 +3,7 @@ import bouton from '../src/img/BOUTON-FORMATION.png';
 import React, { useState } from 'react';
 
 function App() {
+<<<<<<< HEAD
 
     const title = "Juiette Tétard";
 
@@ -75,6 +76,38 @@ function App() {
 
         </div>
     );
+=======
+  const state = {
+    clients : [
+        {id: 1, nom : "Machin1"},
+        {id: 2, nom : "Machin2"},
+        {id: 3, nom : "Machin3"}
+    ]
+  }
+  
+  const title = "bonjour"
+
+  const handleClick = () =>{
+    alert("salut la famille !")
+  }
+
+  return (
+    <div className="App">
+      <div>
+                <h1>{title}</h1>
+                <button onClick={handleClick}>Click me</button>
+                <ul>
+                    {state.clients.map(client =>(
+                        <li>{client.nom} <button>X</button></li>
+                      ))}
+                </ul>
+                <form>
+                    <input type="text" placeholder="Ajouter un client"/><button>Confirmer</button>
+                </form>
+            </div>
+    </div>
+  );
+>>>>>>> b725c7a53cd59d62b6dc2ddc129a0a9a0a9368eb
 }
 
 export default App;
