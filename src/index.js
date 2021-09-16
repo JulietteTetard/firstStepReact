@@ -3,6 +3,8 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import { Router, Route, IndexRoute, browserHistory } from "react-router";
+import { syncHistoryWithStore } from "react-router-redux";
 
 ReactDOM.render(
   <React.StrictMode>
